@@ -45,7 +45,7 @@ def main(port=1233):
                 a, b, kwargs = get_args(data)
                 r = global_align(a, b, **kwargs)
                 client.send(" ".join(r))
-            except Exception, e:
+            except Exception as e:
                 try:
                     client.send("ERROR:" + str(e))
                 except socket.error:

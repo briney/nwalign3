@@ -3344,7 +3344,12 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
  *     _PyString_Resize(&ai, align_counter)
  *     if flip:
  */
+  #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_aj), __pyx_v_align_counter);
+  #else
+  _PyUnicode_Resize((&__pyx_v_aj), __pyx_v_align_counter);
+  #endif
+
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":212
  * 
@@ -3353,7 +3358,11 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
  *     if flip:
  *         return (<object>ai)[::-1], (<object>aj)[::-1] #, score.max()
  */
+  #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_ai), __pyx_v_align_counter);
+  #else
+  _PyUnicode_Resize((&__pyx_v_ai), __pyx_v_align_counter);
+  #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":213
  *     _PyString_Resize(&aj, align_counter)
@@ -4686,7 +4695,11 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
  *     _PyString_Resize(&ai, align_counter)
  *     return (<object>aj)[::-1], (<object>ai)[::-1] #, score.max()
  */
+  #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_aj), __pyx_v_align_counter);
+  #else
+  _PyUnicode_Resize((&__pyx_v_aj), __pyx_v_align_counter);
+  #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":329
  *         p = pointer[i, j]
@@ -4694,7 +4707,11 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
  *     _PyString_Resize(&ai, align_counter)             # <<<<<<<<<<<<<<
  *     return (<object>aj)[::-1], (<object>ai)[::-1] #, score.max()
  */
+  #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_ai), __pyx_v_align_counter);
+  #else
+  _PyUnicode_Resize((&__pyx_v_ai), __pyx_v_align_counter);
+  #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":330
  *     _PyString_Resize(&aj, align_counter)

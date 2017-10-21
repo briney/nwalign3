@@ -1,7 +1,4 @@
-from __future__ import print_function
-
 import sys
-
 
 def main(port=1233):
     import socket
@@ -10,12 +7,12 @@ def main(port=1233):
 
     PORT = int(port)
     CHUNK = 32768 * 8
-    HOST = 'localhost'
+    HOST = 'localhost' 
 
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((HOST, PORT))
     server.listen(4)
-    print("\nstarted server on %s:%i\n" % (HOST, PORT))
+    print "\nstarted server on %s:%i\n" % (HOST, PORT)
 
     def get_args(astr):
         kwargsab = astr.split(" ")
@@ -32,20 +29,20 @@ def main(port=1233):
 
     while True:
         client, address = server.accept()
-        data = True
+        data = True 
         while data:
-            try:
+            try: 
                 data = client.recv(CHUNK).strip()
                 if data == "EXIT":
                     client.close()
                     server.close()
-                    print("EXITING service")
+                    print "EXITING service"
                     sys.exit(0)
 
-                a, b, kwargs = get_args(data)
+                a,b, kwargs = get_args(data)
                 r = global_align(a, b, **kwargs)
                 client.send(" ".join(r))
-            except Exception as e:
+            except Exception, e:
                 try:
                     client.send("ERROR:" + str(e))
                 except socket.error:

@@ -3,34 +3,34 @@
 nwalign: fast `cython`_  - `Needleman-Wunsch`_ alignment
 ------------------------------------------------------------------------------
 
-.. _`Needleman-Wunsch`: http://en.wikipedia.org/wiki/Needleman-Wunsch_algorithm
+.. _`Needleman-Wunsch`: http://en.wikipedia.org/wiki/Needleman-Wunsch_algorithm 
 .. _`scoring matrix`: http://en.wikipedia.org/wiki/Substitution_matrix
 .. _`cython`: http://cython.org
 
 This module provides a python module and a command-line interface to do global-
-sequence alignment using the `Needleman-Wunsch` algorithm. It uses `cython`
+sequence alignment using the `Needleman-Wunsch` algorithm. It uses `cython`_ 
 and numpy for speed.
 
-Command-Line Usage
+Command-Line Usage 
 ==================
-the nwalign3 executable is installed to the PATH by setuptools
+the nwalign executable is installed to the PATH by setuptools
 ::
 
-    $ nwalign3 alphabet alpet
+    $ nwalign alphabet alpet
     alphabet
     alp---et
 
-specify an alignment `scoring matrix`
+specify an alignment `scoring matrix`_ 
 ::
 
-    $ nwalign3 --matrix /usr/share/ncbi/data/BLOSUM62 EEAEE EEEEG
+    $ nwalign --matrix /usr/share/ncbi/data/BLOSUM62 EEAEE EEEEG
     EEAEE-
     EE-EEG
 
 with specified penalties
 ::
 
-    $ nwalign3 --gap_open -10 --gap_extend -4 --match 12 ASDFF ASFF
+    $ nwalign --gap_open -10 --gap_extend -4 --match 12 ASDFF ASFF
     ASDFF
     AS-FF
 
@@ -41,7 +41,7 @@ Alignment
 ---------
 ::
 
-    >>> import nwalign3 as nw
+    >>> import nwalign as nw
     >>> nw.global_align("CEELECANTH", "PELICAN", matrix='PAM250')
     ('CEELE-CANTH', '-PEL-ICAN--')
 
@@ -50,7 +50,7 @@ Alignment
     ('CEELECANTH', '-PELICAN--')
 
 
-the `matrix` is specified as the full path to an `scoring matrix` as
+the `matrix` is specified as the full path to an `scoring matrix`_ as
 is distributed with the NCBI toolset.
 
 Scoring
@@ -69,10 +69,7 @@ and must have the same length.
 
 
 """
-
-from __future__ import print_function
-
-from .cnwalign import global_align, global_align_no_matrix, score_alignment
+from cnwalign import global_align, global_align_no_matrix, score_alignment
 
 
 def main():
@@ -100,8 +97,8 @@ def main():
     elif len(args) != 2:
         sys.exit(parser.print_help())
     else:
-        print("\n".join(global_align(args[0], args[1], options.match,
-                                 options.gap_open, options.gap_extend, options.matrix)))
+        print "\n".join(global_align(args[0], args[1], options.match,
+                                 options.gap_open, options.gap_extend, options.matrix))
 
 if __name__ == "__main__":
     main()

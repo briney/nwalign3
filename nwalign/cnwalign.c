@@ -754,10 +754,10 @@ static size_t __pyx_v_7nwalign_8cnwalign_NONE;
 static INLINE int __pyx_f_7nwalign_8cnwalign_imax2(int, int); /*proto*/
 static PyObject *__pyx_f_7nwalign_8cnwalign_read_matrix(PyObject *, struct __pyx_opt_args_7nwalign_8cnwalign_read_matrix *__pyx_optional_args); /*proto*/
 static PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *, PyObject *, int, int, int, int __pyx_skip_dispatch); /*proto*/
-static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_7nwalign_8cnwalign_DTYPE_INT = { "nwalign3.cnwalign.DTYPE_INT", NULL, sizeof(__pyx_t_7nwalign_8cnwalign_DTYPE_INT), 'I' };
-static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_7nwalign_8cnwalign_DTYPE_BOOL = { "nwalign3.cnwalign.DTYPE_BOOL", NULL, sizeof(__pyx_t_7nwalign_8cnwalign_DTYPE_BOOL), 'I' };
-static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_7nwalign_8cnwalign_DTYPE_UINT = { "nwalign3.cnwalign.DTYPE_UINT", NULL, sizeof(__pyx_t_7nwalign_8cnwalign_DTYPE_UINT), 'U' };
-#define __Pyx_MODULE_NAME "nwalign3.cnwalign"
+static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_7nwalign_8cnwalign_DTYPE_INT = { "nwalign.cnwalign.DTYPE_INT", NULL, sizeof(__pyx_t_7nwalign_8cnwalign_DTYPE_INT), 'I' };
+static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_7nwalign_8cnwalign_DTYPE_BOOL = { "nwalign.cnwalign.DTYPE_BOOL", NULL, sizeof(__pyx_t_7nwalign_8cnwalign_DTYPE_BOOL), 'I' };
+static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_7nwalign_8cnwalign_DTYPE_UINT = { "nwalign.cnwalign.DTYPE_UINT", NULL, sizeof(__pyx_t_7nwalign_8cnwalign_DTYPE_UINT), 'U' };
+#define __Pyx_MODULE_NAME "nwalign.cnwalign"
 int __pyx_module_is_main_nwalign__cnwalign = 0;
 
 /* Implementation of nwalign.cnwalign */
@@ -1080,7 +1080,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_score_alignment(PyObject *__pyx_sel
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("score_alignment", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("nwalign3.cnwalign.score_alignment");
+  __Pyx_AddTraceback("nwalign.cnwalign.score_alignment");
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   __Pyx_INCREF(__pyx_v_a);
@@ -1303,7 +1303,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_score_alignment(PyObject *__pyx_sel
     __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
     __Pyx_SafeReleaseBuffer(&__pyx_bstruct_mat);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("nwalign3.cnwalign.score_alignment");
+  __Pyx_AddTraceback("nwalign.cnwalign.score_alignment");
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -1897,7 +1897,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_read_matrix(PyObject *__pyx_v_path,
     __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
     __Pyx_SafeReleaseBuffer(&__pyx_bstruct_a);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("nwalign3.cnwalign.read_matrix");
+  __Pyx_AddTraceback("nwalign.cnwalign.read_matrix");
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -1927,7 +1927,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_read_matrix(PyObject *__pyx_v_path,
  */
 
 static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_7nwalign_8cnwalign_global_align[] = "\n    perform a global sequence alignment (needleman-wunsch) on seq and and 2. using\n    the matrix for nucleotide transition from matrix if available.\n    where matrix is of the format provided in the ncbi/data directory.\n\n    >>> from nwalign3 import global_align\n    >>> global_align('COELANCANTH', 'PELICAN')\n    ('COELANCANTH', '-PEL-ICAN--')\n\n    ";
+static char __pyx_doc_7nwalign_8cnwalign_global_align[] = "\n    perform a global sequence alignment (needleman-wunsch) on seq and and 2. using\n    the matrix for nucleotide transition from matrix if available.\n    where matrix is of the format provided in the ncbi/data directory.\n\n    >>> from nwalign import global_align\n    >>> global_align('COELANCANTH', 'PELICAN')\n    ('COELANCANTH', '-PEL-ICAN--')\n\n    ";
 static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v__seqj = 0;
   PyObject *__pyx_v__seqi = 0;
@@ -2144,7 +2144,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("global_align", 0, 2, 6, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("nwalign3.cnwalign.global_align");
+  __Pyx_AddTraceback("nwalign.cnwalign.global_align");
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   __Pyx_INCREF(__pyx_v__seqj);
@@ -3440,7 +3440,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
     __Pyx_SafeReleaseBuffer(&__pyx_bstruct_pointer);
     __Pyx_SafeReleaseBuffer(&__pyx_bstruct_score);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("nwalign3.cnwalign.global_align");
+  __Pyx_AddTraceback("nwalign.cnwalign.global_align");
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -4724,7 +4724,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
     __Pyx_SafeReleaseBuffer(&__pyx_bstruct_pointer);
     __Pyx_SafeReleaseBuffer(&__pyx_bstruct_score);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("nwalign3.cnwalign.global_align_no_matrix");
+  __Pyx_AddTraceback("nwalign.cnwalign.global_align_no_matrix");
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -4753,7 +4753,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
  */
 
 static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_7nwalign_8cnwalign_global_align_no_matrix[] = "\n    perform a global sequence alignment (needleman-wunsch) on seq and and 2. using\n    the matrix for nucleotide transition from matrix if available.\n    where matrix is of the format provided in the ncbi/data directory.\n\n    >>> from nwalign3 import global_align\n    >>> global_align('COELANCANTH', 'PELICAN')\n    ('COELANCANTH', '-PEL-ICAN--')\n\n    ";
+static char __pyx_doc_7nwalign_8cnwalign_global_align_no_matrix[] = "\n    perform a global sequence alignment (needleman-wunsch) on seq and and 2. using\n    the matrix for nucleotide transition from matrix if available.\n    where matrix is of the format provided in the ncbi/data directory.\n\n    >>> from nwalign import global_align\n    >>> global_align('COELANCANTH', 'PELICAN')\n    ('COELANCANTH', '-PEL-ICAN--')\n\n    ";
 static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v__seqj = 0;
   PyObject *__pyx_v__seqi = 0;
@@ -4828,7 +4828,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("global_align_no_matrix", 1, 5, 5, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("nwalign3.cnwalign.global_align_no_matrix");
+  __Pyx_AddTraceback("nwalign.cnwalign.global_align_no_matrix");
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   __Pyx_XDECREF(__pyx_r);
@@ -4842,7 +4842,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("nwalign3.cnwalign.global_align_no_matrix");
+  __Pyx_AddTraceback("nwalign.cnwalign.global_align_no_matrix");
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -7064,10 +7064,10 @@ PyMODINIT_FUNC PyInit_cnwalign(void)
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   if (__pyx_m) {
-    __Pyx_AddTraceback("init nwalign3.cnwalign");
+    __Pyx_AddTraceback("init nwalign.cnwalign");
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init nwalign3.cnwalign");
+    PyErr_SetString(PyExc_ImportError, "init nwalign.cnwalign");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

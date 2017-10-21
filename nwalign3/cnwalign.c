@@ -3347,7 +3347,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
   #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_aj), __pyx_v_align_counter);
   #else
-  _PyUnicode_Resize((&__pyx_v_aj), __pyx_v_align_counter);
+  PyUnicode_Resize((&__pyx_v_aj), __pyx_v_align_counter);
   #endif
 
 
@@ -3361,7 +3361,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
   #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_ai), __pyx_v_align_counter);
   #else
-  _PyUnicode_Resize((&__pyx_v_ai), __pyx_v_align_counter);
+  PyUnicode_Resize((&__pyx_v_ai), __pyx_v_align_counter);
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":213
@@ -4698,7 +4698,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
   #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_aj), __pyx_v_align_counter);
   #else
-  _PyUnicode_Resize((&__pyx_v_aj), __pyx_v_align_counter);
+  PyUnicode_Resize((&__pyx_v_aj), __pyx_v_align_counter);
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":329
@@ -4710,7 +4710,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
   #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_ai), __pyx_v_align_counter);
   #else
-  _PyUnicode_Resize((&__pyx_v_ai), __pyx_v_align_counter);
+  PyUnicode_Resize((&__pyx_v_ai), __pyx_v_align_counter);
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":330

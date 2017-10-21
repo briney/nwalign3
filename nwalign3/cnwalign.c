@@ -3104,9 +3104,9 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
  *     aj = PyString_FromStringAndSize(NULL, seqlen)
  * 
  */
-  #if PY_MAJOR_VERSION < 3
-  __pyx_v_ai = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
-  #else
+  // #if PY_MAJOR_VERSION < 3
+  // __pyx_v_ai = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
+  // #else
   __pyx_v_ai = PyUnicode_FromStringAndSize(NULL, __pyx_v_seqlen);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":183
@@ -3116,9 +3116,9 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
  * 
  *     cdef int score_max #, = score[:, -1].max()
  */
-  #if PY_MAJOR_VERSION < 3
-  __pyx_v_aj = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
-  #else
+  // #if PY_MAJOR_VERSION < 3
+  // __pyx_v_aj = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
+  // #else
   __pyx_v_aj = PyUnicode_FromStringAndSize(NULL, __pyx_v_seqlen);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":188
@@ -4449,9 +4449,9 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
  *     aj = PyString_FromStringAndSize(NULL, seqlen)
  * 
  */
-  #if PY_MAJOR_VERSION < 3
-  __pyx_v_ai = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
-  #else
+  // #if PY_MAJOR_VERSION < 3
+  // __pyx_v_ai = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
+  // #else
   __pyx_v_ai = PyUnicode_FromStringAndSize(NULL, __pyx_v_seqlen);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":303
@@ -4461,9 +4461,9 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
  * 
  *     # had to use this and PyObject instead of assigning directly...
  */
-  #if PY_MAJOR_VERSION < 3
-  __pyx_v_aj = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
-  #else
+  // #if PY_MAJOR_VERSION < 3
+  // __pyx_v_aj = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
+  // #else
   __pyx_v_aj = PyUnicode_FromStringAndSize(NULL, __pyx_v_seqlen);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":306

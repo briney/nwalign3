@@ -69,6 +69,9 @@ and must have the same length.
 
 
 """
+
+from __future__ import print_function
+
 from cnwalign import global_align, global_align_no_matrix, score_alignment
 
 
@@ -97,8 +100,8 @@ def main():
     elif len(args) != 2:
         sys.exit(parser.print_help())
     else:
-        print "\n".join(global_align(args[0], args[1], options.match,
-                                 options.gap_open, options.gap_extend, options.matrix))
+        print("\n".join(global_align(args[0], args[1], options.match,
+                                 options.gap_open, options.gap_extend, options.matrix)))
 
 if __name__ == "__main__":
     main()

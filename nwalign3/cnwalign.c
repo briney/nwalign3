@@ -82,11 +82,11 @@
 
 #if PY_MAJOR_VERSION >= 3
   #define PyBaseString_Type            PyUnicode_Type
-  #define PyString_Type                PyUnicode_Type
-  #define PyString_CheckExact          PyUnicode_CheckExact
+  #define PyBytes_Type                PyUnicode_Type
+  #define PyBytes_CheckExact          PyUnicode_CheckExact
 #else
-  #define PyBytes_Type                 PyString_Type
-  #define PyBytes_CheckExact           PyString_CheckExact
+  #define PyBytes_Type                 PyBytes_Type
+  #define PyBytes_CheckExact           PyBytes_CheckExact
 #endif
 
 #if PY_MAJOR_VERSION >= 3
@@ -174,9 +174,9 @@ typedef struct {PyObject **p; char *s; const long n; const char* encoding; const
 /* Type Conversion Predeclarations */
 
 #if PY_MAJOR_VERSION < 3
-#define __Pyx_PyBytes_FromString          PyString_FromString
-#define __Pyx_PyBytes_FromStringAndSize   PyString_FromStringAndSize
-#define __Pyx_PyBytes_AsString            PyString_AsString
+#define __Pyx_PyBytes_FromString          PyBytes_FromString
+#define __Pyx_PyBytes_FromStringAndSize   PyBytes_FromStringAndSize
+#define __Pyx_PyBytes_AsString            PyBytes_AsString
 #else
 #define __Pyx_PyBytes_FromString          PyBytes_FromString
 #define __Pyx_PyBytes_FromStringAndSize   PyBytes_FromStringAndSize
@@ -3092,49 +3092,49 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
  *                     agap_i[i] = zero
  * 
  *     seqlen = max_i + max_j             # <<<<<<<<<<<<<<
- *     ai = PyString_FromStringAndSize(NULL, seqlen)
- *     aj = PyString_FromStringAndSize(NULL, seqlen)
+ *     ai = PyBytes_FromStringAndSize(NULL, seqlen)
+ *     aj = PyBytes_FromStringAndSize(NULL, seqlen)
  */
   __pyx_v_seqlen = (__pyx_v_max_i + __pyx_v_max_j);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":182
  * 
  *     seqlen = max_i + max_j
- *     ai = PyString_FromStringAndSize(NULL, seqlen)             # <<<<<<<<<<<<<<
- *     aj = PyString_FromStringAndSize(NULL, seqlen)
+ *     ai = PyBytes_FromStringAndSize(NULL, seqlen)             # <<<<<<<<<<<<<<
+ *     aj = PyBytes_FromStringAndSize(NULL, seqlen)
  * 
  */
-  __pyx_v_ai = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
+  __pyx_v_ai = PyBytes_FromStringAndSize(NULL, __pyx_v_seqlen);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":183
  *     seqlen = max_i + max_j
- *     ai = PyString_FromStringAndSize(NULL, seqlen)
- *     aj = PyString_FromStringAndSize(NULL, seqlen)             # <<<<<<<<<<<<<<
+ *     ai = PyBytes_FromStringAndSize(NULL, seqlen)
+ *     aj = PyBytes_FromStringAndSize(NULL, seqlen)             # <<<<<<<<<<<<<<
  * 
  *     cdef int score_max #, = score[:, -1].max()
  */
-  __pyx_v_aj = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
+  __pyx_v_aj = PyBytes_FromStringAndSize(NULL, __pyx_v_seqlen);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":188
  * 
  *     # had to use this and PyObject instead of assigning directly...
- *     align_j = PyString_AS_STRING(aj)             # <<<<<<<<<<<<<<
- *     align_i = PyString_AS_STRING(ai)
+ *     align_j = PyBytes_AS_STRING(aj)             # <<<<<<<<<<<<<<
+ *     align_i = PyBytes_AS_STRING(ai)
  * 
  */
-  __pyx_v_align_j = PyString_AS_STRING(__pyx_v_aj);
+  __pyx_v_align_j = PyBytes_AS_STRING(__pyx_v_aj);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":189
  *     # had to use this and PyObject instead of assigning directly...
- *     align_j = PyString_AS_STRING(aj)
- *     align_i = PyString_AS_STRING(ai)             # <<<<<<<<<<<<<<
+ *     align_j = PyBytes_AS_STRING(aj)
+ *     align_i = PyBytes_AS_STRING(ai)             # <<<<<<<<<<<<<<
  * 
  *     p = pointer[i, j]
  */
-  __pyx_v_align_i = PyString_AS_STRING(__pyx_v_ai);
+  __pyx_v_align_i = PyBytes_AS_STRING(__pyx_v_ai);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":191
- *     align_i = PyString_AS_STRING(ai)
+ *     align_i = PyBytes_AS_STRING(ai)
  * 
  *     p = pointer[i, j]             # <<<<<<<<<<<<<<
  *     while p != NONE:
@@ -3322,7 +3322,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
  *         align_counter += 1
  *         p = pointer[i, j]             # <<<<<<<<<<<<<<
  * 
- *     _PyString_Resize(&aj, align_counter)
+ *     _PyBytes_Resize(&aj, align_counter)
  */
     __pyx_t_28 = __pyx_v_i;
     __pyx_t_29 = __pyx_v_j;
@@ -3332,24 +3332,24 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":211
  *         p = pointer[i, j]
  * 
- *     _PyString_Resize(&aj, align_counter)             # <<<<<<<<<<<<<<
- *     _PyString_Resize(&ai, align_counter)
+ *     _PyBytes_Resize(&aj, align_counter)             # <<<<<<<<<<<<<<
+ *     _PyBytes_Resize(&ai, align_counter)
  *     if flip:
  */
-  _PyString_Resize((&__pyx_v_aj), __pyx_v_align_counter);
+  _PyBytes_Resize((&__pyx_v_aj), __pyx_v_align_counter);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":212
  * 
- *     _PyString_Resize(&aj, align_counter)
- *     _PyString_Resize(&ai, align_counter)             # <<<<<<<<<<<<<<
+ *     _PyBytes_Resize(&aj, align_counter)
+ *     _PyBytes_Resize(&ai, align_counter)             # <<<<<<<<<<<<<<
  *     if flip:
  *         return (<object>ai)[::-1], (<object>aj)[::-1] #, score.max()
  */
-  _PyString_Resize((&__pyx_v_ai), __pyx_v_align_counter);
+  _PyBytes_Resize((&__pyx_v_ai), __pyx_v_align_counter);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":213
- *     _PyString_Resize(&aj, align_counter)
- *     _PyString_Resize(&ai, align_counter)
+ *     _PyBytes_Resize(&aj, align_counter)
+ *     _PyBytes_Resize(&ai, align_counter)
  *     if flip:             # <<<<<<<<<<<<<<
  *         return (<object>ai)[::-1], (<object>aj)[::-1] #, score.max()
  *     else:
@@ -3358,7 +3358,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
   if (__pyx_t_1) {
 
     /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":214
- *     _PyString_Resize(&ai, align_counter)
+ *     _PyBytes_Resize(&ai, align_counter)
  *     if flip:
  *         return (<object>ai)[::-1], (<object>aj)[::-1] #, score.max()             # <<<<<<<<<<<<<<
  *     else:
@@ -4431,49 +4431,49 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
  *                     pointer[<size_t>i, <size_t>j] = LEFT
  * 
  *     seqlen = max_i + max_j             # <<<<<<<<<<<<<<
- *     ai = PyString_FromStringAndSize(NULL, seqlen)
- *     aj = PyString_FromStringAndSize(NULL, seqlen)
+ *     ai = PyBytes_FromStringAndSize(NULL, seqlen)
+ *     aj = PyBytes_FromStringAndSize(NULL, seqlen)
  */
   __pyx_v_seqlen = (__pyx_v_max_i + __pyx_v_max_j);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":302
  * 
  *     seqlen = max_i + max_j
- *     ai = PyString_FromStringAndSize(NULL, seqlen)             # <<<<<<<<<<<<<<
- *     aj = PyString_FromStringAndSize(NULL, seqlen)
+ *     ai = PyBytes_FromStringAndSize(NULL, seqlen)             # <<<<<<<<<<<<<<
+ *     aj = PyBytes_FromStringAndSize(NULL, seqlen)
  * 
  */
-  __pyx_v_ai = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
+  __pyx_v_ai = PyBytes_FromStringAndSize(NULL, __pyx_v_seqlen);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":303
  *     seqlen = max_i + max_j
- *     ai = PyString_FromStringAndSize(NULL, seqlen)
- *     aj = PyString_FromStringAndSize(NULL, seqlen)             # <<<<<<<<<<<<<<
+ *     ai = PyBytes_FromStringAndSize(NULL, seqlen)
+ *     aj = PyBytes_FromStringAndSize(NULL, seqlen)             # <<<<<<<<<<<<<<
  * 
  *     # had to use this and PyObject instead of assigning directly...
  */
-  __pyx_v_aj = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
+  __pyx_v_aj = PyBytes_FromStringAndSize(NULL, __pyx_v_seqlen);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":306
  * 
  *     # had to use this and PyObject instead of assigning directly...
- *     align_j = PyString_AS_STRING(aj)             # <<<<<<<<<<<<<<
- *     align_i = PyString_AS_STRING(ai)
+ *     align_j = PyBytes_AS_STRING(aj)             # <<<<<<<<<<<<<<
+ *     align_i = PyBytes_AS_STRING(ai)
  * 
  */
-  __pyx_v_align_j = PyString_AS_STRING(__pyx_v_aj);
+  __pyx_v_align_j = PyBytes_AS_STRING(__pyx_v_aj);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":307
  *     # had to use this and PyObject instead of assigning directly...
- *     align_j = PyString_AS_STRING(aj)
- *     align_i = PyString_AS_STRING(ai)             # <<<<<<<<<<<<<<
+ *     align_j = PyBytes_AS_STRING(aj)
+ *     align_i = PyBytes_AS_STRING(ai)             # <<<<<<<<<<<<<<
  * 
  *     p = pointer[i, j]
  */
-  __pyx_v_align_i = PyString_AS_STRING(__pyx_v_ai);
+  __pyx_v_align_i = PyBytes_AS_STRING(__pyx_v_ai);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":309
- *     align_i = PyString_AS_STRING(ai)
+ *     align_i = PyBytes_AS_STRING(ai)
  * 
  *     p = pointer[i, j]             # <<<<<<<<<<<<<<
  *     while p != NONE:
@@ -4647,7 +4647,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
  *             raise Exception('wtf!')
  *         align_counter += 1             # <<<<<<<<<<<<<<
  *         p = pointer[i, j]
- *     _PyString_Resize(&aj, align_counter)
+ *     _PyBytes_Resize(&aj, align_counter)
  */
     __pyx_v_align_counter += 1;
 
@@ -4655,8 +4655,8 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
  *             raise Exception('wtf!')
  *         align_counter += 1
  *         p = pointer[i, j]             # <<<<<<<<<<<<<<
- *     _PyString_Resize(&aj, align_counter)
- *     _PyString_Resize(&ai, align_counter)
+ *     _PyBytes_Resize(&aj, align_counter)
+ *     _PyBytes_Resize(&ai, align_counter)
  */
     __pyx_t_21 = __pyx_v_i;
     __pyx_t_22 = __pyx_v_j;
@@ -4666,23 +4666,23 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":328
  *         align_counter += 1
  *         p = pointer[i, j]
- *     _PyString_Resize(&aj, align_counter)             # <<<<<<<<<<<<<<
- *     _PyString_Resize(&ai, align_counter)
+ *     _PyBytes_Resize(&aj, align_counter)             # <<<<<<<<<<<<<<
+ *     _PyBytes_Resize(&ai, align_counter)
  *     return (<object>aj)[::-1], (<object>ai)[::-1] #, score.max()
  */
-  _PyString_Resize((&__pyx_v_aj), __pyx_v_align_counter);
+  _PyBytes_Resize((&__pyx_v_aj), __pyx_v_align_counter);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":329
  *         p = pointer[i, j]
- *     _PyString_Resize(&aj, align_counter)
- *     _PyString_Resize(&ai, align_counter)             # <<<<<<<<<<<<<<
+ *     _PyBytes_Resize(&aj, align_counter)
+ *     _PyBytes_Resize(&ai, align_counter)             # <<<<<<<<<<<<<<
  *     return (<object>aj)[::-1], (<object>ai)[::-1] #, score.max()
  */
-  _PyString_Resize((&__pyx_v_ai), __pyx_v_align_counter);
+  _PyBytes_Resize((&__pyx_v_ai), __pyx_v_align_counter);
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":330
- *     _PyString_Resize(&aj, align_counter)
- *     _PyString_Resize(&ai, align_counter)
+ *     _PyBytes_Resize(&aj, align_counter)
+ *     _PyBytes_Resize(&ai, align_counter)
  *     return (<object>aj)[::-1], (<object>ai)[::-1] #, score.max()             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
@@ -6926,7 +6926,7 @@ PyMODINIT_FUNC PyInit_cnwalign(void)
   __pyx_init_filenames();
   __pyx_empty_tuple = PyTuple_New(0); if (unlikely(!__pyx_empty_tuple)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #if PY_MAJOR_VERSION < 3
-  __pyx_empty_bytes = PyString_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_bytes)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_empty_bytes = PyBytes_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_bytes)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #else
   __pyx_empty_bytes = PyBytes_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_bytes)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
@@ -7098,7 +7098,7 @@ static void __Pyx_RaiseDoubleKeywordsError(
         "%s() got multiple values for keyword argument '%U'", func_name, kw_name);
         #else
         "%s() got multiple values for keyword argument '%s'", func_name,
-        PyString_AS_STRING(kw_name));
+        PyBytes_AS_STRING(kw_name));
         #endif
 }
 
@@ -7152,7 +7152,7 @@ static int __Pyx_ParseOptionalKeywords(
             values[name-argnames] = value;
         } else {
             #if PY_MAJOR_VERSION < 3
-            if (unlikely(!PyString_CheckExact(key)) && unlikely(!PyString_Check(key))) {
+            if (unlikely(!PyBytes_CheckExact(key)) && unlikely(!PyBytes_Check(key))) {
             #else
             if (unlikely(!PyUnicode_CheckExact(key)) && unlikely(!PyUnicode_Check(key))) {
             #endif
@@ -7163,8 +7163,8 @@ static int __Pyx_ParseOptionalKeywords(
                     if (PyUnicode_GET_SIZE(**name) == PyUnicode_GET_SIZE(key) &&
                         PyUnicode_Compare(**name, key) == 0) break;
                     #else
-                    if (PyString_GET_SIZE(**name) == PyString_GET_SIZE(key) &&
-                        _PyString_Eq(**name, key)) break;
+                    if (PyBytes_GET_SIZE(**name) == PyBytes_GET_SIZE(key) &&
+                        _PyBytes_Eq(**name, key)) break;
                     #endif
                 }
                 if (*name) {
@@ -7177,8 +7177,8 @@ static int __Pyx_ParseOptionalKeywords(
                         if (PyUnicode_GET_SIZE(**name) == PyUnicode_GET_SIZE(key) &&
                             PyUnicode_Compare(**name, key) == 0) goto arg_passed_twice;
                         #else
-                        if (PyString_GET_SIZE(**name) == PyString_GET_SIZE(key) &&
-                            _PyString_Eq(**name, key)) goto arg_passed_twice;
+                        if (PyBytes_GET_SIZE(**name) == PyBytes_GET_SIZE(key) &&
+                            _PyBytes_Eq(**name, key)) goto arg_passed_twice;
                         #endif
                     }
                     if (kwds2) {
@@ -7202,7 +7202,7 @@ invalid_keyword:
     PyErr_Format(PyExc_TypeError,
     #if PY_MAJOR_VERSION < 3
         "%s() got an unexpected keyword argument '%s'",
-        function_name, PyString_AsString(key));
+        function_name, PyBytes_AsString(key));
     #else
         "%s() got an unexpected keyword argument '%U'",
         function_name, key);
@@ -8477,7 +8477,7 @@ static PyTypeObject *__Pyx_ImportType(const char *module_name, const char *class
     if (!py_module)
         goto bad;
     #if PY_MAJOR_VERSION < 3
-    py_name = PyString_FromString(class_name);
+    py_name = PyBytes_FromString(class_name);
     #else
     py_name = PyUnicode_FromString(class_name);
     #endif
@@ -8523,7 +8523,7 @@ static PyObject *__Pyx_ImportModule(const char *name) {
     PyObject *py_module = 0;
 
     #if PY_MAJOR_VERSION < 3
-    py_name = PyString_FromString(name);
+    py_name = PyBytes_FromString(name);
     #else
     py_name = PyUnicode_FromString(name);
     #endif
@@ -8550,21 +8550,21 @@ static void __Pyx_AddTraceback(const char *funcname) {
     PyFrameObject *py_frame = 0;
 
     #if PY_MAJOR_VERSION < 3
-    py_srcfile = PyString_FromString(__pyx_filename);
+    py_srcfile = PyBytes_FromString(__pyx_filename);
     #else
     py_srcfile = PyUnicode_FromString(__pyx_filename);
     #endif
     if (!py_srcfile) goto bad;
     if (__pyx_clineno) {
         #if PY_MAJOR_VERSION < 3
-        py_funcname = PyString_FromFormat( "%s (%s:%d)", funcname, __pyx_cfilenm, __pyx_clineno);
+        py_funcname = PyBytes_FromFormat( "%s (%s:%d)", funcname, __pyx_cfilenm, __pyx_clineno);
         #else
         py_funcname = PyUnicode_FromFormat( "%s (%s:%d)", funcname, __pyx_cfilenm, __pyx_clineno);
         #endif
     }
     else {
         #if PY_MAJOR_VERSION < 3
-        py_funcname = PyString_FromString(funcname);
+        py_funcname = PyBytes_FromString(funcname);
         #else
         py_funcname = PyUnicode_FromString(funcname);
         #endif
@@ -8614,9 +8614,9 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t) {
         if (t->is_unicode) {
             *t->p = PyUnicode_DecodeUTF8(t->s, t->n - 1, NULL);
         } else if (t->intern) {
-            *t->p = PyString_InternFromString(t->s);
+            *t->p = PyBytes_InternFromString(t->s);
         } else {
-            *t->p = PyString_FromStringAndSize(t->s, t->n - 1);
+            *t->p = PyBytes_FromStringAndSize(t->s, t->n - 1);
         }
         #else  /* Python 3+ has unicode identifiers */
         if (t->is_unicode | t->is_str) {

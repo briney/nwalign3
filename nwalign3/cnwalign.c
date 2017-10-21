@@ -3107,7 +3107,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
   #if PY_MAJOR_VERSION < 3
   __pyx_v_ai = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
   #else
-  __pyx_v_ai = PyUnicode_FromStringAndSize(NULL, __pyx_v_seqlen);
+  __pyx_v_ai = PyBytes_FromStringAndSize(NULL, __pyx_v_seqlen);
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":183
@@ -3120,7 +3120,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
   #if PY_MAJOR_VERSION < 3
   __pyx_v_aj = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
   #else
-  __pyx_v_aj = PyUnicode_FromStringAndSize(NULL, __pyx_v_seqlen);
+  __pyx_v_aj = PyBytes_FromStringAndSize(NULL, __pyx_v_seqlen);
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":188
@@ -3133,7 +3133,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
   #if PY_MAJOR_VERSION < 3
   __pyx_v_align_j = PyString_AS_STRING(__pyx_v_aj);
   #else
-  __pyx_v_align_j = PyUnicode_AsEncodedString(__pyx_v_aj, "utf-8", "Error ~");
+  __pyx_v_align_j = PyBytes_AsString(__pyx_v_aj, "utf-8", "Error ~");
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":189
@@ -3146,7 +3146,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
   #if PY_MAJOR_VERSION < 3
   __pyx_v_align_i = PyString_AS_STRING(__pyx_v_ai);
   #else
-  __pyx_v_align_i = PyUnicode_AsEncodedString(__pyx_v_ai, "utf-8", "Error ~");
+  __pyx_v_align_i = PyBytes_AsString(__pyx_v_ai, "utf-8", "Error ~");
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":191
@@ -3355,7 +3355,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
   #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_aj), __pyx_v_align_counter);
   #else
-  PyUnicode_Resize((&__pyx_v_aj), __pyx_v_align_counter);
+  PyBytes_Resize((&__pyx_v_aj), __pyx_v_align_counter);
   #endif
 
 
@@ -3369,7 +3369,7 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
   #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_ai), __pyx_v_align_counter);
   #else
-  PyUnicode_Resize((&__pyx_v_ai), __pyx_v_align_counter);
+  PyBytes_Resize((&__pyx_v_ai), __pyx_v_align_counter);
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":213
@@ -4471,7 +4471,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
   #if PY_MAJOR_VERSION < 3
   __pyx_v_ai = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
   #else
-  __pyx_v_ai = PyUnicode_FromStringAndSize(NULL, __pyx_v_seqlen);
+  __pyx_v_ai = PyBytes_FromStringAndSize(NULL, __pyx_v_seqlen);
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":303
@@ -4484,7 +4484,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
   #if PY_MAJOR_VERSION < 3
   __pyx_v_aj = PyString_FromStringAndSize(NULL, __pyx_v_seqlen);
   #else
-  __pyx_v_aj = PyUnicode_FromStringAndSize(NULL, __pyx_v_seqlen);
+  __pyx_v_aj = PyBytes_FromStringAndSize(NULL, __pyx_v_seqlen);
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":306
@@ -4497,7 +4497,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
   #if PY_MAJOR_VERSION < 3
   __pyx_v_align_j = PyString_AS_STRING(__pyx_v_aj);
   #else
-  __pyx_v_align_j = PyUnicode_AsEncodedString(__pyx_v_aj, "utf-8", "Error ~");
+  __pyx_v_align_j = PyBytes_AsString(__pyx_v_aj, "utf-8", "Error ~");
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":307
@@ -4510,7 +4510,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
   #if PY_MAJOR_VERSION < 3
   __pyx_v_align_i = PyString_AS_STRING(__pyx_v_ai);
   #else
-  __pyx_v_align_i = PyUnicode_AsEncodedString(__pyx_v_ai, "utf-8", "Error ~");
+  __pyx_v_align_i = PyBytes_AsString(__pyx_v_ai, "utf-8", "Error ~");
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":309
@@ -4714,7 +4714,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
   #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_aj), __pyx_v_align_counter);
   #else
-  PyUnicode_Resize((&__pyx_v_aj), __pyx_v_align_counter);
+  PyBytes_Resize((&__pyx_v_aj), __pyx_v_align_counter);
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":329
@@ -4726,7 +4726,7 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
   #if PY_MAJOR_VERSION < 3
   _PyString_Resize((&__pyx_v_ai), __pyx_v_align_counter);
   #else
-  PyUnicode_Resize((&__pyx_v_ai), __pyx_v_align_counter);
+  PyBytes_Resize((&__pyx_v_ai), __pyx_v_align_counter);
   #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":330

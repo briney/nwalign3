@@ -72,7 +72,10 @@ and must have the same length.
 
 from __future__ import print_function
 
-from .cnwalign import global_align, global_align_no_matrix, score_alignment
+# from .cnwalign import global_align, global_align_no_matrix, score_alignment
+from .wrappers import global_align_wrapper as global_align
+from .wrappers import global_align_no_matrix_wrapper as global_align_no_matrix
+from .wrappers import score_alignment_wrapper as score_alignment
 
 
 def main():

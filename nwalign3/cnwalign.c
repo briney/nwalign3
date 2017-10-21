@@ -3130,7 +3130,11 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
  *     align_i = PyString_AS_STRING(ai)
  * 
  */
+  #if PY_MAJOR_VERSION < 3
   __pyx_v_align_j = PyString_AS_STRING(__pyx_v_aj);
+  #else
+  __pyx_v_align_j = PyUnicode_AsEncodedString(__pyx_v_aj);
+  #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":189
  *     # had to use this and PyObject instead of assigning directly...
@@ -3139,7 +3143,11 @@ static PyObject *__pyx_pf_7nwalign_8cnwalign_global_align(PyObject *__pyx_self, 
  * 
  *     p = pointer[i, j]
  */
+  #if PY_MAJOR_VERSION < 3
   __pyx_v_align_i = PyString_AS_STRING(__pyx_v_ai);
+  #else
+  __pyx_v_align_i = PyUnicode_AsEncodedString(__pyx_v_ai);
+  #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":191
  *     align_i = PyString_AS_STRING(ai)
@@ -4486,7 +4494,11 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
  *     align_i = PyString_AS_STRING(ai)
  * 
  */
+  #if PY_MAJOR_VERSION < 3
   __pyx_v_align_j = PyString_AS_STRING(__pyx_v_aj);
+  #else
+  __pyx_v_align_j = PyUnicode_AsEncodedString(__pyx_v_aj);
+  #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":307
  *     # had to use this and PyObject instead of assigning directly...
@@ -4495,7 +4507,11 @@ static  PyObject *__pyx_f_7nwalign_8cnwalign_global_align_no_matrix(PyObject *__
  * 
  *     p = pointer[i, j]
  */
+  #if PY_MAJOR_VERSION < 3
   __pyx_v_align_i = PyString_AS_STRING(__pyx_v_ai);
+  #else
+  __pyx_v_align_i = PyUnicode_AsEncodedString(__pyx_v_ai);
+  #endif
 
   /* "/opt/src/biostuff/nwalign/nwalign/cnwalign.pyx":309
  *     align_i = PyString_AS_STRING(ai)

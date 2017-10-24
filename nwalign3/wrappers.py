@@ -39,8 +39,10 @@ def score_alignment_wrapper(s1, s2, **kwargs):
 
 def _get_builtin_matrices():
     matrix_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'matrices')
+    print('MATRIX DIRECTORY:', matrix_dir)
     matrix_files = sorted(glob.glob(matrix_dir + '/*'))
     matrices = {os.path.basename(m).lower(): m for m in matrix_files}
+    print('MATRICES:', ', '.join(matrices.keys()))
     return matrices
 
 

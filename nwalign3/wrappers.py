@@ -1,15 +1,21 @@
 #!/usr/bin/env python
 # filename: wrappers.py
 
+import glob
+import os
 import sys
 
 from .cnwalign import global_align, global_align_no_matrix, score_alignment
+
+BUILTIN_MATRICES = _get_builtin_matrices()
 
 
 def global_align_wrapper(s1, s2, match=1, gap_open=-1, gap_extend=-1, matrix=None):
     match = int(match)
     gap_open = int(gap_open)
     gap_extend = int(gap_extend)
+    if matrix.lower() in BUILTIN_MATRICES.keys():
+        matrix = BUILTIN_MATRICES[matrix.lower()]
     if sys.version_info[0] >= 3:
         s1 = s1.encode()
         s2 = s2.encode()
@@ -31,3 +37,10 @@ def score_alignment_wrapper(s1, s2, **kwargs):
         s2 = s2.encode()
     score = score_alignment(s1, s2, **kwargs)
     return score
+
+
+def _get_builtin_matrices():
+    matrix_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'matrices')
+    matrix_files = sorted(glob.glob(matrix_dir + '/*'))
+    matrices = {os.path.basename(m).lower(): m for m in matrix_files}
+    return matrices

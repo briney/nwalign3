@@ -7,8 +7,6 @@ import sys
 
 from .cnwalign import global_align, global_align_no_matrix, score_alignment
 
-BUILTIN_MATRICES = _get_builtin_matrices()
-
 
 def global_align_wrapper(s1, s2, match=1, gap_open=-1, gap_extend=-1, matrix=None):
     match = int(match)
@@ -44,3 +42,6 @@ def _get_builtin_matrices():
     matrix_files = sorted(glob.glob(matrix_dir + '/*'))
     matrices = {os.path.basename(m).lower(): m for m in matrix_files}
     return matrices
+
+
+BUILTIN_MATRICES = _get_builtin_matrices()

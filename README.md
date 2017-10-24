@@ -1,6 +1,6 @@
 # nwalign3  
   
-Slightly modified version of [nwalign](https://pypi.python.org/pypi/nwalign/?) that has been updated for Python 3.X compatibility.  
+Updated version of [nwalign](https://pypi.python.org/pypi/nwalign/?) with Python 3.X compatibility.  
   
 ### install  
 `pip install nwalign3`  

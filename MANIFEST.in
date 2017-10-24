@@ -1,0 +1,4 @@
+include README.md
+include nwalign/*
+include nwalign3/*
+include nwalign3/matrices/*

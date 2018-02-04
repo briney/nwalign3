@@ -23,7 +23,7 @@ EE-EEG
   
 You can also provide the name of a built-in matrix (currently just PAM250 and BLOSUM62):  
 ```
-$ nwalign2 --matrix BLOSUM62 EEAEE EEEG
+$ nwalign3 --matrix BLOSUM62 EEAEE EEEG
 EEAEE-
 EE-EEG  
 ```  

@@ -1,6 +1,6 @@
 # nwalign3  
   
-Updated version of [nwalign](https://pypi.python.org/pypi/nwalign/?) with Python 3.X compatibility.  
+Updated version of [nwalign](https://pypi.python.org/pypi/nwalign/?) with Python 3.x compatibility.  
   
 ### install  
 `pip install nwalign3`  
@@ -21,7 +21,7 @@ EEAEE-
 EE-EEG  
 ```  
   
-You can also provide just the name of a built-in matrix (currently just PAM250 and BLOSUM62):  
+You can also provide the name of a built-in matrix (currently just PAM250 and BLOSUM62):  
 ```
 $ nwalign2 --matrix BLOSUM62 EEAEE EEEG
 EEAEE-

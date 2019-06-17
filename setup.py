@@ -3,11 +3,19 @@ import os
 
 from setuptools import setup, find_packages
 from distutils.extension import Extension
-import numpy
+
+
+if os.environ.get('READTHEDOCS', None):
+    include_dirs = ["nwalign", "nwalign3"]
+else:
+    import numpy
+    np_include = numpy.get_include()
+    include_dirs = [np_include, "nwalign", "nwalign3"]
+
+
 
 version = '0.1.0'
 
-np_include = numpy.get_include()
 try:
     import nwalign3
     doc = nwalign3.__doc__
@@ -23,7 +31,7 @@ setup(name='nwalign3',
       long_description=doc,
       ext_modules=[Extension("nwalign3/cnwalign",
                       sources=["nwalign3/cnwalign.c"],
-                      include_dirs=[np_include, "nwalign", "nwalign3"])],
+                      include_dirs=include_dirs)],
       keywords='sequence bioinformatics alignment needleman-wunsch',
       url='https://github.com/briney/nwalign3',
       # download_url='http://bitbucket.org/brentp/biostuff/get/tip.tar.gz',

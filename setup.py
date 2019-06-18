@@ -4,15 +4,11 @@ import os
 from setuptools import setup, find_packages
 from distutils.extension import Extension
 
+import numpy
+np_include = numpy.get_include()
+include_dirs = [np_include, "nwalign", "nwalign3"]
 
-if os.environ.get('READTHEDOCS', None):
-    include_dirs = ["nwalign", "nwalign3"]
-else:
-    import numpy
-    np_include = numpy.get_include()
-    include_dirs = [np_include, "nwalign", "nwalign3"]
-
-version = '0.1.1'
+version = '0.1.2'
 
 try:
     import nwalign3

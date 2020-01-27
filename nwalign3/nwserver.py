@@ -12,7 +12,7 @@ def main(port=1233):
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((HOST, PORT))
     server.listen(4)
-    print "\nstarted server on %s:%i\n" % (HOST, PORT)
+    print("\nstarted server on %s:%i\n" % (HOST, PORT))
 
     def get_args(astr):
         kwargsab = astr.split(" ")
@@ -36,13 +36,14 @@ def main(port=1233):
                 if data == "EXIT":
                     client.close()
                     server.close()
-                    print "EXITING service"
+                    print("EXITING service")
                     sys.exit(0)
 
                 a,b, kwargs = get_args(data)
                 r = global_align(a, b, **kwargs)
                 client.send(" ".join(r))
-            except Exception, e:
+            except Exception:
+                e = sys.exc_info()[0]
                 try:
                     client.send("ERROR:" + str(e))
                 except socket.error:

@@ -20,7 +20,7 @@ else:
 	np_include = numpy.get_include()
 	include_dirs = [np_include, "nwalign", "nwalign3"]
 
-version = '0.1.4'
+version = '0.1.5'
 
 try:
     import nwalign3

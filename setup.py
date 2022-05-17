@@ -5,20 +5,20 @@ from setuptools import setup, find_packages
 from distutils.extension import Extension
 
 
-try:
-	import numpy
-	np_include = numpy.get_include()
-	include_dirs = [np_include, "nwalign", "nwalign3"]
-except:
-	include_dirs = ['nwalign', 'nwalign3']
-	
-	
-# if os.environ.get('READTHEDOCS', None) == 'True':
-# 	include_dirs = ['nwalign', 'nwalign3']
-# else:
+# try:
 # 	import numpy
 # 	np_include = numpy.get_include()
 # 	include_dirs = [np_include, "nwalign", "nwalign3"]
+# except:
+# 	include_dirs = ['nwalign', 'nwalign3']
+	
+	
+if os.environ.get('READTHEDOCS', None) == 'True':
+	include_dirs = ['nwalign', 'nwalign3']
+else:
+	import numpy
+	np_include = numpy.get_include()
+	include_dirs = [np_include, "nwalign", "nwalign3"]
 
 version = '0.1.4'
 
